@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "756048760312",
+    "project_id": "campus-store-amrita",
+    "storage_bucket": "campus-store-amrita.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756048760312:android:1c54fcf83996d013db1a0d",
+        "android_client_info": {
+          "package_name": "com.example.project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhlDOsso0R8U4cCtMW97vMvMd4xMfQ0sg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,5 @@
 // ignore_for_file: avoid_print
-
-import 'package:project/models/food.dart';
+import 'package:project/models/item.dart';
 import 'package:project/models/user.dart' as MyAppUser;
 import 'package:project/notifiers/authNotifier.dart';
 import 'package:project/screens/adminHome.dart';

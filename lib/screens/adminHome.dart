@@ -1,11 +1,11 @@
 // ignore_for_file: curly_braces_in_flow_control_structures
 
-import 'package:project/apis/foodAPIs.dart';
+import 'package:project/apis/itemAPIs.dart';
 import 'package:project/notifiers/authNotifier.dart';
 import 'package:project/widgets/customRaisedButton.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:project/models/food.dart';
+import 'package:project/models/item.dart';
 import 'package:provider/provider.dart';
 
 class AdminHomePage extends StatefulWidget {

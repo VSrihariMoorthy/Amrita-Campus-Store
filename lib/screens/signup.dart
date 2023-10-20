@@ -352,7 +352,7 @@ class SignupPageState extends State<SignupPage> {
                   child: Container(
                     padding: const EdgeInsets.only(top: 60),
                     child: const Text(
-                      'SAACS',
+                      'Campus Store',
                       style: TextStyle(
                         fontSize: 60,
                         fontWeight: FontWeight.bold,

@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'SAACS',
+      title: 'Campus Store',
       theme: ThemeData(
         fontFamily: 'Montserrat',
         primaryColor: const Color.fromRGBO(255, 63, 111, 1),

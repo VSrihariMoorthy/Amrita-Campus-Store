@@ -43,7 +43,7 @@ class AdminHomePageState extends State<AdminHomePage> {
     Provider.of<AuthNotifier>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SAACS'),
+        title: const Text('Campus Store'),
         actions: <Widget>[
           IconButton(
             icon: const Icon(
@@ -191,7 +191,7 @@ class AdminHomePageState extends State<AdminHomePage> {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      "New Food Item",
+                      "New Item",
                       style: TextStyle(
                         color: Color.fromRGBO(255, 63, 111, 1),
                         fontSize: 25,
@@ -215,7 +215,7 @@ class AdminHomePageState extends State<AdminHomePage> {
                       },
                       cursorColor: const Color.fromRGBO(255, 63, 111, 1),
                       decoration: const InputDecoration(
-                        hintText: 'Food Name',
+                        hintText: 'Item Name',
                         hintStyle: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Color.fromRGBO(255, 63, 111, 1),
@@ -320,7 +320,7 @@ class AdminHomePageState extends State<AdminHomePage> {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      "Edit Food Item",
+                      "Edit Item",
                       style: TextStyle(
                         color: Color.fromRGBO(255, 63, 111, 1),
                         fontSize: 25,
@@ -345,7 +345,7 @@ class AdminHomePageState extends State<AdminHomePage> {
                       },
                       cursorColor: const Color.fromRGBO(255, 63, 111, 1),
                       decoration: const InputDecoration(
-                        hintText: 'Food Name',
+                        hintText: 'Item Name',
                         hintStyle: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Color.fromRGBO(255, 63, 111, 1),

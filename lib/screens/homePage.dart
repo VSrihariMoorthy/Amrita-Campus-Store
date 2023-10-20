@@ -32,7 +32,7 @@ class HomePageState extends State<HomePage> {
     Provider.of<AuthNotifier>(context, listen: false);
     return Scaffold(
         appBar: AppBar(
-          title: const Text('SAACS'),
+          title: const Text('Campus Store'),
         ),
         // ignore: unrelated_type_equality_checks
         body: (authNotifier.userDetails?.uuid == Null)

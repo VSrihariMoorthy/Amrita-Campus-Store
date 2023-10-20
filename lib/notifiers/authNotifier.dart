@@ -16,11 +16,11 @@ class AuthNotifier extends ChangeNotifier {
   }
 
   // Test
-  late User _userDetails;
+  User? _userDetails;
 
   User? get userDetails => _userDetails;
 
-  setUserDetails(User user) {
+  setUserDetails(User? user) {
     _userDetails = user;
     notifyListeners();
   }

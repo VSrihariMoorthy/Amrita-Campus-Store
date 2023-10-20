@@ -146,7 +146,7 @@ class ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   child: Container(
                     padding: const EdgeInsets.only(top: 60),
                     child: const Text(
-                      'SAACS',
+                      'Campus Store',
                       style: TextStyle(
                         fontSize: 60,
                         fontWeight: FontWeight.bold,

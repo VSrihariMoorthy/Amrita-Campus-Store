@@ -169,7 +169,7 @@ class ProfilePageState extends State<ProfilePage> {
         if (snapshot.hasData && snapshot.data!.docs.isNotEmpty) {
           List<dynamic> orders = snapshot.data!.docs;
           return Container(
-            margin: const EdgeInsets.only(top: 10.0),
+            margin: const EdgeInsets.only(top: 1.0),
             child: ListView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),

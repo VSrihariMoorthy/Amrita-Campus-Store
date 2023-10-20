@@ -27,7 +27,7 @@ void toast(String data) {
 
 login(MyAppUser.User user, AuthNotifier authNotifier,
     BuildContext context) async {
-  late ProgressDialog pr = ProgressDialog(context,
+    ProgressDialog pr = ProgressDialog(context,
       type: ProgressDialogType.normal, isDismissible: false, showLogs: false);
   pr.show();
   UserCredential authResult;
@@ -145,11 +145,17 @@ getUserDetails(AuthNotifier authNotifier) async {
       .doc(authNotifier.user?.uid)
       .get()
       .catchError((e) => print(e))
-      .then((value) => {
-    (value != null)
-        ? authNotifier
-        .setUserDetails(MyAppUser.User.fromMap(value.data as Map<String, dynamic>))
-        : print(value)
+      .then((value) {
+    if (value != null) {
+      Map<String, dynamic>? userData = value.data() as Map<String, dynamic>?;
+      if (userData != null) {
+        authNotifier.setUserDetails(MyAppUser.User.fromMap(userData));
+      } else {
+        print("UserData is null");
+      }
+    } else {
+      print("Value is null");
+    }
   });
 }
 
@@ -450,10 +456,10 @@ placeOrder(BuildContext context, double total) async {
     CollectionReference itemRef = FirebaseFirestore.instance.collection('items');
     CollectionReference userRef = FirebaseFirestore.instance.collection('users');
 
-    List<String> foodIds = List.empty();
+    List<String> foodIds = List.empty(growable: true);
     Map<String, int> count = new Map<String, int>();
-    List<dynamic> _cartItems = List.empty();
-
+    List<dynamic> _cartItems = List.empty(growable: true);
+    print("Initiaization");
     // Checking user balance
     DocumentSnapshot userData = await userRef.doc(currentUser?.uid).get();
     if (userData['balance'] < total) {
@@ -463,7 +469,7 @@ placeOrder(BuildContext context, double total) async {
       toast("You dont have succifient balance to place this order!");
       return;
     }
-
+    print("Checking user balance");
     // Getting all cart items of the user
     QuerySnapshot data = await cartRef
         .doc(currentUser?.uid)
@@ -473,7 +479,7 @@ placeOrder(BuildContext context, double total) async {
       foodIds.add(item.id);
       count[item.id] = item['count'];
     });
-
+    print("Getting all cart items of the user");
     // Checking for item availability
     QuerySnapshot snap = await itemRef
         .where(FieldPath.documentId, whereIn: foodIds)
@@ -490,7 +496,7 @@ placeOrder(BuildContext context, double total) async {
         return;
       }
     }
-
+    print("Checking for item availability");
     // Creating cart items array
     snap.docs.forEach((item) {
       _cartItems.add({
@@ -500,7 +506,7 @@ placeOrder(BuildContext context, double total) async {
         "price": item['price']
       });
     });
-
+    print("Creating cart items array");
     // Creating a transaction
     await FirebaseFirestore.instance.runTransaction((Transaction transaction) async {
       // Update the item count in items table
@@ -510,12 +516,12 @@ placeOrder(BuildContext context, double total) async {
               count[snap.docs[i].id]
         });
       }
-
+      print("Creating a transaction");
       // Deduct amount from user
       await userRef
           .doc(currentUser?.uid)
           .update({'balance': FieldValue.increment(-1 * total)});
-
+      print("Deduct amount from user");
       // Place a new order
       await orderRef.doc().set({
         "items": _cartItems,
@@ -524,7 +530,7 @@ placeOrder(BuildContext context, double total) async {
         "placed_at": DateTime.now(),
         "placed_by": currentUser?.uid
       });
-
+      print("Place a new order");
       // Empty cart
       for (var i = 0; i < data.docs.length; i++) {
         await transaction.delete(data.docs[i].reference);
@@ -532,7 +538,7 @@ placeOrder(BuildContext context, double total) async {
       print("in in");
       // return;
     });
-
+    print("Empty cart");
     // Successfull transaction
     pr.hide().then((isHidden) {
       print(isHidden);

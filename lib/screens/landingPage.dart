@@ -49,7 +49,7 @@ class LandingPageState extends State<LandingPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'SAACS',
+              'Campus Store',
               style: TextStyle(
                 fontSize: 60,
                 fontWeight: FontWeight.bold,

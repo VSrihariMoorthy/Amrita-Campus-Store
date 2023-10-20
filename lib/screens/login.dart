@@ -263,9 +263,9 @@ class LoginPageState extends State<LoginPage> {
                   child: Container(
                     padding: const EdgeInsets.only(top: 60),
                     child: const Text(
-                      'SAACS',
+                      'Campus Store',
                       style: TextStyle(
-                        fontSize: 60,
+                        fontSize: 40,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                         fontFamily: 'MuseoModerno',

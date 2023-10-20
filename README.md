@@ -1,6 +1,7 @@
-# project
+# Amrita Campus Store - project
 
-A new Flutter project.
+A new Flutter project. The students and faculties at Amrita University have faced several challenges and problems related to the traditional methods of procuring items within the campus. But that's history now. Announcing the shopping app for Amrita Campus Store that can serve hassle free experience to people at Amrita University who want to make purchases at the store. This does not only saves time but also increases e-commerce for stationeries, essentials and other supplies inside the university.
+
 
 ## Getting Started
 

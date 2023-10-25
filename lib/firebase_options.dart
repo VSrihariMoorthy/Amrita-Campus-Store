@@ -42,40 +42,5 @@ class DefaultFirebaseOptions {
         );
     }
   }
-
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyA2YM2d8vvd1Wc5IfZnKuflQTNxfYzeJJo',
-    appId: '1:756048760312:web:c23f972c5d807704db1a0d',
-    messagingSenderId: '756048760312',
-    projectId: 'campus-store-amrita',
-    authDomain: 'campus-store-amrita.firebaseapp.com',
-    storageBucket: 'campus-store-amrita.appspot.com',
-    measurementId: 'G-TW6MZGT7GF',
-  );
-
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAhlDOsso0R8U4cCtMW97vMvMd4xMfQ0sg',
-    appId: '1:756048760312:android:1c54fcf83996d013db1a0d',
-    messagingSenderId: '756048760312',
-    projectId: 'campus-store-amrita',
-    storageBucket: 'campus-store-amrita.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBieyokxWkXVIhTnOuhFYDqmBlmIEkCykw',
-    appId: '1:756048760312:ios:a96bf6924e48b06edb1a0d',
-    messagingSenderId: '756048760312',
-    projectId: 'campus-store-amrita',
-    storageBucket: 'campus-store-amrita.appspot.com',
-    iosBundleId: 'com.example.project',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBieyokxWkXVIhTnOuhFYDqmBlmIEkCykw',
-    appId: '1:756048760312:ios:9f567dd9b8edde16db1a0d',
-    messagingSenderId: '756048760312',
-    projectId: 'campus-store-amrita',
-    storageBucket: 'campus-store-amrita.appspot.com',
-    iosBundleId: 'com.example.project.RunnerTests',
-  );
+    //Add keys for each platforms accordingly or let the firestore cli do the part of creating firebase_options.dart
 }
